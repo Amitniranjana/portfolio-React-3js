@@ -1,5 +1,5 @@
 import { Leva } from 'leva';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera } from '@react-three/drei';
@@ -9,7 +9,7 @@ import Rings from '../components/Rings.jsx';
 import ReactLogo from '../components/ReactLogo.jsx';
 import Button from '../components/Button.jsx';
 import Target from '../components/Target.jsx';
-import CanvasLoader from '../components/Loading.jsx';
+import CanvasErrorBoundary from '../components/CanvasErrorBoundary.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
 import { calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
@@ -22,18 +22,45 @@ const Hero = () => {
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
+  // Animated text state
+  const texts = ["Web Developer", "& Freelancer"];
+  const [displayText, setDisplayText] = useState(texts[0]);
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (deleting) {
+        setDisplayText((prev) => prev.slice(0, -1));
+      } else {
+        setDisplayText(texts[index].slice(0, displayText.length + 1));
+      }
+
+      if (!deleting && displayText === texts[index]) {
+        setTimeout(() => setDeleting(true), 1000);
+      }
+      if (deleting && displayText === "") {
+        setDeleting(false);
+        setIndex((prev) => (prev + 1) % texts.length);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [displayText, deleting, index, texts]);
+
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
-          Hi, I am Adrian <span className="waving-hand">👋</span>
+          Hi, I am Amit <span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag text-gray_gradient">Building Products & Brands</p>
+        <p className="hero_tag text-gray_gradient">{displayText}</p>
       </div>
 
       <div className="w-full h-full absolute inset-0">
+        <CanvasErrorBoundary>
         <Canvas className="w-full h-full">
-          <Suspense fallback={<CanvasLoader />}>
+          <Suspense fallback={null}>
             {/* To hide controller */}
             <Leva hidden />
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
@@ -53,6 +80,7 @@ const Hero = () => {
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
+        </CanvasErrorBoundary>
       </div>
 
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">

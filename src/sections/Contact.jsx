@@ -26,9 +26,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: 'JavaScript Mastery',
+          to_name: 'Amit Niranjan',
           from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
+          to_email: 'yamitniranjan1234@gmail.com',
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
@@ -69,18 +69,17 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
+        <img src="/assets/terminal.png" alt="background" className="absolute inset-0 min-h-screen object-cover" />
 
         <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
+          <h3 className="head-text">Let's Talk</h3>
+          <p className="text-lg text-gray-700 mt-3 text-center">
+            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to life, I’m here to help.
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-            <label className="space-y-3">
-              <span className="field-label">Full Name</span>
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-8 space-y-6">
+            <div className="form-group">
+              <label htmlFor="name" className="field-label">Full Name</label>
               <input
                 type="text"
                 name="name"
@@ -88,12 +87,13 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., John Doe"
+                id="name"
+                placeholder="John Doe"
               />
-            </label>
+            </div>
 
-            <label className="space-y-3">
-              <span className="field-label">Email address</span>
+            <div className="form-group">
+              <label htmlFor="email" className="field-label">Email Address</label>
               <input
                 type="email"
                 name="email"
@@ -101,26 +101,27 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., johndoe@gmail.com"
+                id="email"
+                placeholder="johndoe@gmail.com"
               />
-            </label>
+            </div>
 
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
+            <div className="form-group">
+              <label htmlFor="message" className="field-label">Your Message</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 required
-                rows={5}
+                rows="5"
                 className="field-input"
+                id="message"
                 placeholder="Share your thoughts or inquiries..."
               />
-            </label>
+            </div>
 
             <button className="field-btn" type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
-
               <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
             </button>
           </form>

@@ -5,7 +5,6 @@ import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
 import { myProjects } from '../constants/index.js';
-import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
 
 const projectCount = myProjects.length;
@@ -61,14 +60,22 @@ const Projects = () => {
 
             <a
               className="flex items-center gap-2 cursor-pointer text-white-600"
+              href={currentProject.hreff}
+              target="_blank"
+              rel="noreferrer">
+              <p><b>Check demo-video</b></p>
+              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+            </a>
+            <a
+              className="flex items-center gap-2 cursor-pointer text-white-600"
               href={currentProject.href}
               target="_blank"
               rel="noreferrer">
-              <p>Check Live Site</p>
+              <p><b>Check Live Site</b></p>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
             </a>
-          </div>
 
+          </div>
           <div className="flex justify-between items-center mt-7">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
               <img src="/assets/left-arrow.png" alt="left arrow" />
@@ -85,7 +92,7 @@ const Projects = () => {
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>
-              <Suspense fallback={<CanvasLoader />}>
+              <Suspense fallback={null}>
                 <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>

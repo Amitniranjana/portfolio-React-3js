@@ -23,10 +23,10 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">Hi, I’m Adrian Hajdin</p>
+              <p className="grid-headtext">Hi, I’m Amit Niranjan</p>
               <p className="grid-subtext">
-                With 12 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites.
+              3rd-year B.Tech student (2022-2026) with expertise in DSA and MERN Stack, skilled in building scalable web apps using React.js, Next.js and Tailwind CSS. I am passionate about learning new technologies and building products that solve real-world problems.
+
               </p>
             </div>
           </div>
@@ -39,8 +39,13 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                applications
+             <b> Programming Languages:</b> C, C++, Python, JavaScript, SQL <br />
+
+<b>Frontend Development: </b> React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap <br />
+
+<b> Backend & Databases:</b> Node.js, Express.js, MongoDB, MySQL <br />
+
+<b> Data Structures & Algorithms:</b> Sorting, Searching, Trees, Graphs, Stacks, Queues, Dynamic Programming
               </p>
             </div>
           </div>
@@ -63,7 +68,7 @@ const About = () => {
             </div>
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Rjieka, Croatia and open to remote work worldwide.</p>
+              <p className="grid-subtext">open to remote work worldwide.</p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
@@ -95,7 +100,7 @@ const About = () => {
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">adrian@jsmastery.pro</p>
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Yamitniranjan1234@gmail.com</p>
               </div>
             </div>
           </div>
