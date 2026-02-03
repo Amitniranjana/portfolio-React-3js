@@ -18,50 +18,60 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+    // Check for required env vars and gracefully fallback to mail client
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      showAlert({
+        text: 'Email service not configured. Opening your mail client as a fallback.',
+        type: 'danger',
+      });
+
+      // open mail client with prefilled subject/body
+      const subject = encodeURIComponent(`Contact from portfolio: ${form.name}`);
+      const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name} <${form.email}>`);
+      window.location.href = `mailto:yamitniranjan1234@gmail.com?subject=${subject}&body=${body}`;
+      return;
+    }
+
     setLoading(true);
 
     emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: 'Amit Niranjan',
-          from_email: form.email,
-          to_email: 'yamitniranjan1234@gmail.com',
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: 'Thank you for your message 😃',
-            type: 'success',
-          });
+      .send(SERVICE_ID, TEMPLATE_ID, {
+        from_name: form.name,
+        to_name: 'Amit Niranjan',
+        from_email: form.email,
+        to_email: 'yamitniranjan1234@gmail.com',
+        message: form.message,
+      }, PUBLIC_KEY)
+      .then(() => {
+        setLoading(false);
+        showAlert({
+          text: 'Thank you for your message 😃',
+          type: 'success',
+        });
 
-          setTimeout(() => {
-            hideAlert(false);
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: 'danger',
+        setTimeout(() => {
+          hideAlert();
+          setForm({
+            name: '',
+            email: '',
+            message: '',
           });
-        },
-      );
+        }, 3000);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.error('Email send error:', error);
+
+        showAlert({
+          text: "I didn't receive your message 😢",
+          type: 'danger',
+        });
+      });
   };
 
   return (

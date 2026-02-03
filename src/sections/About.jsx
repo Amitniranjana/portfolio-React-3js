@@ -5,13 +5,22 @@ import Button from '../components/Button.jsx';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const [hasCopy, setHasCopy] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(' adrian@jsmastery.pro');
+    navigator.clipboard.writeText('yamitniranjan@gmail.com');
     setHasCopied(true);
 
     setTimeout(() => {
       setHasCopied(false);
+    }, 2000);
+  };
+  const copyMobileNumber = () => {
+    navigator.clipboard.writeText('8542935871');
+    setHasCopy(true);
+
+    setTimeout(() => {
+      setHasCopy(false);
     }, 2000);
   };
 
@@ -25,8 +34,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I’m Amit Niranjan</p>
               <p className="grid-subtext">
-              3rd-year B.Tech student (2022-2026) with expertise in DSA and MERN Stack, skilled in building scalable web apps using React.js, Next.js and Tailwind CSS. I am passionate about learning new technologies and building products that solve real-world problems.
-
+             Final-year B.Tech student and Full Stack Developer with expertise in Rust, MERN Stack, and Next.js. Experienced clearin architecting scalable microservices using Docker, Kubernetes, and AWS. basic knowledge of system design and building AI-powered web applications. Seeking a challenging role to utilize skills in backend engineering and cloud architecture.
               </p>
             </div>
           </div>
@@ -39,13 +47,22 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-             <b> Programming Languages:</b> C, C++, Python, JavaScript, SQL <br />
+             <b> Programming Languages:</b> JavaScript, TypeScript, C++, Rust, SQL  <br />
+React.js, Next.js, Redux Toolkit, Tailwind CSS, HTML, CSS  <br />
 
-<b>Frontend Development: </b> React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap <br />
+<b> Backend & Databases:</b>Rust (Axum) , Node.js, Express.js, MongoDB, PostgreSQL (Neon), Firebase  <br />
 
-<b> Backend & Databases:</b> Node.js, Express.js, MongoDB, MySQL <br />
+<b> System Design & Fundamentals:</b> System Design (LLD & HLD), Data Structures & Algorithms (DSA), OOP,
+DBMS, OS, Computer Networks
+<b> Backend & Databases:</b>Rust (Axum) , Node.js, Express.js, MongoDB, PostgreSQL (Neon), Firebase  <br />
 
-<b> Data Structures & Algorithms:</b> Sorting, Searching, Trees, Graphs, Stacks, Queues, Dynamic Programming
+<b> DevOps & Cloud:</b> Docker, Kubernetes, AWS, CI/CD Pipelines
+<b> Backend & Databases:</b>Rust (Axum) , Node.js, Express.js, MongoDB, PostgreSQL (Neon), Firebase  <br />
+
+<b> DevOps & Cloud:</b> Docker, Kubernetes, AWS, CI/CD Pipelines
+<br />
+
+<b>Tools:</b>Git, GitHub, Postman, Clerk Auth, VS Code
               </p>
             </div>
           </div>
@@ -79,10 +96,15 @@ const About = () => {
             <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">My Passion for Coding</p>
+              <p className="grid-headtext">ACHIEVEMENTS </p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+               •Finalist at ATMECS Global GenAI Hackathon Selected among top 50 teams for innovative AI solution
+               <br />
+•  Solved 250+ DSA problems;<br />
+•  Achieved 100 Days Consistency Badge
+<br />
+•  Cleared two stages of Tata Imagination Challenge. <br />
+•  Web Development certificate from Apna college.
               </p>
             </div>
           </div>
@@ -101,6 +123,10 @@ const About = () => {
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Yamitniranjan1234@gmail.com</p>
+              </div>
+              <div className="copy-container" onClick={ copyMobileNumber}>
+                <img src={hasCopy ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">8542935871</p>
               </div>
             </div>
           </div>

@@ -58,12 +58,12 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: 'Ramlakhan Builders - Construction Company Website',
-    desc: ' Ramlakhan Builders is a modern, high-performance website designed to showcase construction services. It features a highly interactive and visually appealing landing page with smooth animations, ensuring an engaging user experience.',
+    title: 'AI-Powered Interview Generation System',
+    desc: '• Built an AI-driven platform that collects user info and generates customized interviews. • Integrated Google Gemini API & Vapi Workflow for real-time question generation. • Added authentication, Firebase, and feedback features for personalized improvement ',
     subdesc:
-      'Built with React.js, JavaScript, GSAP, and Locomotive Scroll, this website delivers fast load times, seamless scrolling effects, and a responsive UI for enhanced usability across devices.',
-    href: 'https://ramlakhanbuilders.com/',
-    hreff: 'https://youtu.be/NQAbzueeHV0?feature=shared',
+      'Built with | Next js ,Tailwind css ,Firebase , Vapi , Google gemini | this website delivers fast load times, seamless scrolling effects, and a responsive UI for enhanced usability across devices.',
+    href: 'https://ai-mock-interview-seven-sable.vercel.app/sign-in',
+    hreff: 'https://www.linkedin.com/posts/amit-niranjan-76063125a_ai-artificialintelligence-interviewpreparation-activity-7389269012469305344-qVxQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_PJfgBmslSPbZrfshhH462JYYU5eCSv08',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -92,12 +92,13 @@ export const myProjects = [
     ],
   },
   {
-    title: 'SmartHR - Employee Management System',
-    desc: 'A robust task management system where admins and managers assign tasks, track progress, and monitor performance. Employees can accept, complete, or fail tasks and view task statistics via a dedicated dashboard, with insights into project status for better decision-making.',
+  title: 'Mystery Message - Anonymous Feedback Platform',
+    desc: 'An AI-powered mental health support bot offering personalized emotional assistance, mood tracking, and guided self-help resources in a safe and accessible space.',
     subdesc:
-      'Tech Stack: React.js, Context API, LocalStorage. Developed a role-based authentication system with secure login and personalized dashboards.',
-    href: 'https://amitniranjana-employee-management-system-react-js.vercel.app/',
-    hreff: 'https://youtu.be/-7wjLhwXfIo?feature=shared',
+      '• Architected an anonymous feedback platform enabling unique public links, leveraging MongoDB Aggregation Pipelines for efficient data filtering and management. • Implemented secure OTP-based authentication via NextAuth and Resend, while ensuring strict type safety and input validation using Zod.',
+       href: 'https://mystery-message-psi-three.vercel.app/',
+    hreff: 'https://github.com/Amitniranjana/anonymousMessage',
+
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -120,45 +121,7 @@ export const myProjects = [
 
     ],
   },
-  {
-    title: 'MindEase - AI Mental Health Support Bot',
-    desc: 'An AI-powered mental health support bot offering personalized emotional assistance, mood tracking, and guided self-help resources in a safe and accessible space.',
-    subdesc:
-      'The bot utilizes conversational AI and sentiment analysis to interact with users and provide personalized suggestions. It is built with React.js, Tailwind CSS, TypeScript, and Framer Motion.',
-    hreff: 'https://youtu.be/BrEq4S2NOGA?feature=shared',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
+
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -175,28 +138,28 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Smart bridge',
-    pos: 'Web Developer',
-    duration: '20 Jan - 10 March 2025',
-    title: " As part of my internship, I have contributed to the development of Social X, a social media platform built using the MERN stack. key features such as real-time messaging, JWT-based user authentication, interactive posts (likes, comments), and notifications. Additionally, I have integrated WebSockets to enable real-time updates, enhancing user engagement and platform responsiveness",
-    icon: '/assets/framerr.png',
+    name: 'Livana Eco',
+    pos: 'backend developer intern',
+    duration: '1 Nov 2025 - Present...',
+    title: " • Developed high-performance backend modules using Rust and Axum, focusing on type safety and concurrency. • Streamlined deployment workflows by containerizing Rust microservices using Docker. ",
+    icon: '/assets/framer.png',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'ATMECS Global Gen AI Hackathon',
-    pos: ' Web Developer',
-    duration: '2024',
-    title: "I was selected for the ATMECS Global Gen AI Hackathon, where I worked on an AI Mental Health Support Bot. This AI-powered bot provides personalized emotional assistance, mood tracking, and guided self-help resources using conversational AI and sentiment analysis. Built with React.js, Tailwind CSS, TypeScript, and Framer Motion, it ensures a safe and accessible space for mental health support.",
-    icon: '/assets/figma.png',
+    name: 'ShammTech IT Solutions ',
+    pos: ' Full Stack Developer Intern',
+    duration: 'july 2025 - sep 2025',
+    title: " Implemented real-time communication features for a Video Conferencing Platform using WebRTC/Socket.io ensuring low latency data transfer",
+    icon: '/assets/react.svg',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Startup Project',
-    pos: 'Web Developer',
-    duration: '10 April - 20 June 2024',
-    title: "I built an e-commerce website for my brother's construction business, Ramlakhan Builders, using React.js, JavaScript, GSAP, and Locomotive Scroll. It features smooth animations, an interactive landing page, and a responsive UI for an engaging user experience, enabling seamless order placement via an attached Google Form.",
+    name: 'SmartInternz ',
+    pos: 'Full Stack Developer Intern ',
+    duration: 'Jan 2025  -  sep 2025',
+    title: "• Developed SocialX using the MERN stack, implementing secure JWT authentication, real-time posts, and dynamic news feeds. • Designed a fully responsive UI with React and Redux, ensuring optimized performance across mobile and desktop devices. ",
     icon: '/assets/notion.png',
     animation: 'salute',
   },
