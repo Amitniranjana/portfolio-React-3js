@@ -40,7 +40,7 @@
 
 ## <a name="live-demo">🚀 Live Demo</a>
 
-**🌐 [View Live Portfolio](https://your-live-link-here.com)** *(Replace with your actual live link)*
+**🌐 [View Live Portfolio](https://portfolio-react-3js.vercel.app/)**
 
 Experience the interactive 3D portfolio with smooth animations, immersive hero section, and dynamic project showcases.
 
